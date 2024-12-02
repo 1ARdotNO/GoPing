@@ -1,5 +1,5 @@
 # Use the official Go image for building the application
-FROM golang:1.23 AS builder
+FROM golang:1.23.3-bookworm AS builder
 
 # Set the working directory
 WORKDIR /app
