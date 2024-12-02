@@ -1,6 +1,6 @@
 module icmp_api
 
-go 1.23.1
+go 1.22.9
 
 require (
 	github.com/bytedance/sonic v1.11.6 // indirect
