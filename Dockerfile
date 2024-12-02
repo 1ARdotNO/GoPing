@@ -17,7 +17,7 @@ COPY . .
 RUN go build -o icmp_api
 
 # Use a lightweight image for the final deployment
-FROM debian:bullseye-slim
+FROM debian:bookworm-slim
 
 # Install required system tools for ICMP ping
 RUN apt-get update && apt-get install -y \
