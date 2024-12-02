@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  icmp-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - AUTH_KEY=my_secret_key
+    restart: always

@@ -1,0 +1,91 @@
+{
+    "info": {
+        "name": "ICMP Ping API",
+        "_postman_id": "12345678-1234-5678-1234-567812345678",
+        "description": "A collection for testing the ICMP Ping API.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Ping Hostname",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/ICMP?hostname=example.com&key=my_secret_key",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8080",
+                    "path": ["ICMP"],
+                    "query": [
+                        {
+                            "key": "hostname",
+                            "value": "example.com",
+                            "description": "The hostname or IP address to ping."
+                        },
+                        {
+                            "key": "key",
+                            "value": "my_secret_key",
+                            "description": "The authentication key."
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Ping Invalid Hostname",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/ICMP?hostname=invalid-hostname&key=my_secret_key",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8080",
+                    "path": ["ICMP"],
+                    "query": [
+                        {
+                            "key": "hostname",
+                            "value": "invalid-hostname",
+                            "description": "An invalid hostname for testing error responses."
+                        },
+                        {
+                            "key": "key",
+                            "value": "my_secret_key",
+                            "description": "The authentication key."
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Unauthorized Request",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/ICMP?hostname=example.com&key=wrong_key",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8080",
+                    "path": ["ICMP"],
+                    "query": [
+                        {
+                            "key": "hostname",
+                            "value": "example.com",
+                            "description": "The hostname or IP address to ping."
+                        },
+                        {
+                            "key": "key",
+                            "value": "wrong_key",
+                            "description": "An incorrect authentication key."
+                        }
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
+}
